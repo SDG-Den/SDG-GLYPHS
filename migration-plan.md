@@ -1,65 +1,47 @@
 # SDG-GLYPHS Migration Plan
 
-## 1. Implement Lifecycle Scripts
+## Directory Mapping
 
-All four root-level lifecycle scripts are **empty stubs** — must be implemented:
+| Source | Installed to |
+|--------|-------------|
+| `config/config.json` | `~/.config/SDG-GLYPHS/config.json` |
+| `config/glyphs-data/` | `~/.config/SDG-GLYPHS/glyphs-data/` |
+| `local/glyphs/` (Python package) | `~/.local/SDG-GLYPHS/glyphs/` |
+| `local/glyphs-cli.py` | `~/.local/SDG-GLYPHS/glyphs-cli.py` |
+| `tips/` | `~/.local/tips/SDG-GLYPHS/` |
+| `docs/` | `~/.local/docs/SDG-GLYPHS/` |
 
-| Script | Purpose |
-|--------|---------|
-| `install.sh` | Install Python package, deploy config files, create symlink for `glyphs` command |
-| `uninstall.sh` | Remove Python package, remove config, remove symlinks |
-| `update.sh` | Re-install or git pull + re-deploy |
-| `detect.sh` | Check Python3, GTK3, Cairo requirements |
+## Path Rewrites
 
-## 2. Installation Strategy
+No hardcoded `~/.config/sdgos/` references in this module's scripts. The Python app uses `config/config.json` relative to its working directory.
 
-### 2.1 Python package deployment
-- `local/glyphs/` is a Python package (has `__init__.py`, `app.py`, etc.)
-- Install via `pip install -e ./local/glyphs/` or copy to a known path and add to `PYTHONPATH`.
-- `local/glyphs-cli.py` is the CLI entry point.
-- Ideally: create a `pyproject.toml` with a `[project.scripts]` entry for `glyphs=gylphs-cli:main`.
+**However**, the symlink `/usr/bin/glyphs` is referenced by SDG-MANGO-CORE's `binds.conf`:
+```
+bind=SUPER,G,spawn_shell,/usr/bin/glyphs
+```
+This symlink should point to `~/.local/SDG-GLYPHS/glyphs-cli.py`. The install.sh should create it.
 
-### 2.2 Symlink for CLI
-- Current SDG-OS expects `/usr/bin/glyphs` (referenced in `SDG-MANGO-CORE/config/mango/binds.conf` line 75-78).
-- Either symlink `glyphs-cli.py` to `/usr/bin/glyphs` or create a wrapper script.
+**Internal config refs** — check `local/glyphs/app.py` for hardcoded config paths. The app should use `~/.config/SDG-GLYPHS/config.json` at runtime.
 
-### 2.3 Config deployment
-- `config/config.json` → `~/.config/sdgos/glyphs/config.json`
-- `config/glyphs-data/*.json` → `~/.config/sdgos/glyphs/glyphs-data/*.json`
+## Lifecycle Scripts
 
-## 3. Path Audit
+All four root-level scripts are empty. Implement:
 
-### 3.1 `config.json` references
-- `config/config.json` has `"exec_prefix": "mmsg dispatch spawn_shell,"` and `"term_exec": ["ghostty", "-e"]` — these reference mangoWM-specific tools. No path changes needed but note the dependency on mangoWM.
-- The `config.json` references glyphs-data paths relative to itself (read by the Python app at runtime) — verify the Python app loads from the correct install directory.
+- **install.sh**: Copy Python package under `~/.local/SDG-GLYPHS/`, install via pip or set PYTHONPATH, symlink `glyphs-cli.py` to `/usr/bin/glyphs`, copy config to `~/.config/SDG-GLYPHS/`, copy docs/tips.
+- **uninstall.sh**: Remove `~/.local/SDG-GLYPHS/`, `~/.config/SDG-GLYPHS/`, remove symlink.
+- **update.sh**: Re-deploy.
+- **detect.sh**: Check Python3, GTK3, Cairo (`gi.repository.Gtk`, `gi.repository.Gdk`, `gi.repository.Cairo`).
 
-### 3.2 Gyphs app internal paths
-- Check `local/glyphs/app.py` for any hardcoded paths to `config.json` or `glyphs-data/`.
-- The app should use `~/.config/sdgos/glyphs/` as its config root.
+## Modular Tips
 
-## 4. Empty Directory Cleanup
+- Create `tips/` with glyph input usage tips
+- `install.sh` copies to `~/.local/tips/SDG-GLYPHS/`
 
-| Directory | Status |
-|-----------|--------|
-| `cache/` | Empty — remove or document |
-| `tips/` | Empty — add tips or remove |
-| `other/` | Empty — remove or document |
+## Modular Docs
 
-## 5. Modular Docs/Tips Contribution
+- `docs/README.md` and `docs/README-updated.md` exist — merge and copy to `~/.local/docs/SDG-GLYPHS/`
 
-### 5.1 Tips
-- Contribute tips about glyph input system, drawing glyphs, using the dictionary.
-- Add tip entries under `tips/` directory.
+## Cleanup
 
-### 5.2 Docs
-- `docs/README.md` and `docs/README-updated.md` exist already (documentation of the module).
-- Consider contributing a help topic about glyph usage.
-
-## 6. Build/Dependency Management
-
-### 6.1 `.pyc` cache files
-- `local/glyphs/__pycache__/` contains compiled `.pyc` files — add to `.gitignore`.
-
-### 6.2 Dependencies
-- Document Python dependencies: PyGObject (GTK3), Cairo, `gi.repository`.
-- Add to `detect.sh`: verify `import gi; gi.require_version('Gtk','3.0'); from gi.repository import Gtk, Gdk, Cairo`.
+- Remove `local/glyphs/__pycache__/` — add to `.gitignore`
+- Remove empty `cache/`, `other/`, `tips/` (if not populated)
