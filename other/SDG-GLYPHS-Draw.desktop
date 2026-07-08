@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=SDG-Glyphs (Draw)
+Comment=Open glyph drawing surface
+Exec=sdgglyphs
+Icon=applications-other
+Terminal=false
+Type=Application
+Categories=Utility;
+NoDisplay=true

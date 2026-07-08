@@ -14,7 +14,7 @@ import os
 # ---------------------------------------------------------------------------
 
 # Root config directory under the user's home
-CONFIG_DIR = os.path.expanduser("~/.config/sdgos/glyphs")
+CONFIG_DIR = os.path.expanduser("~/.config/SDG-GLYPHS")
 
 # Path to the JSON config file
 CONFIG_FILE = os.path.join(CONFIG_DIR, "config.json")

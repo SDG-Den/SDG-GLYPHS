@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=SDG-Glyphs
+Comment=Pen-based glyph input system
+Exec=sdgglyphs --dictionary
+Icon=applications-other
+Terminal=false
+Type=Application
+Categories=Utility;
+Actions=draw;record;record-freehand;
+
+[Desktop Action draw]
+Name=Open Drawing Surface
+Exec=sdgglyphs
+
+[Desktop Action record]
+Name=Record New Glyph (grid)
+Exec=sdgglyphs --record
+
+[Desktop Action record-freehand]
+Name=Record New Glyph (freehand)
+Exec=sdgglyphs --record-freehand
