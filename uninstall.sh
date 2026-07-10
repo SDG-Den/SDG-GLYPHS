@@ -7,12 +7,12 @@
 # ---------------------------------------------------------------------------
 
 # Remove the local module directory (Python package + CLI entrypoint)
-rm -rf /home/$(whoami)/.local/SDG-GLYPHS
+rm -rf $HOME/.local/SDG-GLYPHS
 
 
 # Remove docs and tips shipped with this module
-rm -rf /home/$(whoami)/.local/docs/SDG-GLYPHS
-rm -rf /home/$(whoami)/.local/tips/SDG-GLYPHS
+rm -rf $HOME/.local/docs/SDG-GLYPHS
+rm -rf $HOME/.local/tips/SDG-GLYPHS
 
 # Remove the /usr/bin/sdgglyphs symlink created during install
 sudo unlink /usr/bin/sdgglyphs
