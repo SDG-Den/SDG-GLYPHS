@@ -1,47 +1,63 @@
 # SDG-GLYPHS Documentation Plan
 
 ## Current Status
-Two doc files exist: `docs/README.md` (400 lines, full documentation) and `docs/README-updated.md` (230 lines, condensed). No tips exist (placeholder only).
+Two doc files exist: `README.md` (400 lines, comprehensive) and `README-updated.md` (230 lines, condensed). The updated version references `mangoWM` (correct compositor name) vs `mangoWC` in the original, specifies 71 glyphs vs 60+, and uses 15° rotation steps vs unspecified. Zero tips exist.
+
+## Source-Verified Inventory
+**Components:**
+- Gesture/glyph input recognition system
+- Modes: Normal (type/exec/term), Record (grid-snapped + freehand), Dictionary, Bracket, OCR, Carousel
+- Session execution, strike-out, undo
+- Recognition pipeline: RDP simplification, resampling, DTW, rotation invariance (12 rotations at 15° steps)
+- 71 glyphs (confirmed from source)
+- Glyph data format (JSON)
+- Configuration reference
+- Input filtering
+- Dependencies: mangoWM (NOT mangoWC)
+
+### Doc Files to Merge
+| File | Lines | Notes |
+|------|-------|-------|
+| `README.md` | 400 | More detailed (project structure, architecture flow, glyph data format) but references mangoWC |
+| `README-updated.md` | 230 | Less detailed but references mangoWM, has 71 glyphs, 15° rotation steps |
 
 ## Docs System (`docs/`)
 **Deploy location**: `~/.local/docs/SDG-GLYPHS/`
 
-### Existing Docs
-| File | Topic |
-|------|-------|
-| README.md | Full documentation: quick start, normal mode, mode system, session execution, recording modes, dictionary mode, recognition pipeline, architecture, configuration, glyph list |
-| README-updated.md | Condensed version referencing mangoWM instead of mangoWC |
-
 ### Planned Doc Topics
 | # | Topic | Description | Priority |
 |---|-------|-------------|----------|
-| 1 | Quick Start Guide | Getting started with sdgglyphs in 5 minutes | High |
-| 2 | Normal Mode Deep Dive | Drawing, matching, output modes, session execution, undo, strike-out | Medium |
-| 3 | Recording Modes | Grid-snapped vs freehand recording, how to train new glyphs | Medium |
-| 4 | Dictionary | Browsing glyphs, animated cards, understanding match quality | Low |
-| 5 | Recognition Pipeline | RDP, resampling, DTW matching, rotation invariance | Low |
-| 6 | Built-in Glyphs Reference | Full listing of all 71 glyphs with stroke templates | Medium |
-| 7 | Configuration Reference | config.json fields: recording sections, ink width, carousel, exec prefix | Low |
-| 8 | Integration | How SDG-MANGO-CORE binds SUPER+G, how SDG-TERM integrates | Low |
+| 1 | Quick Start Guide | Installation, first glyph, basic usage | High |
+| 2 | Normal Mode Deep Dive | TYPE/EXEC/TERM modes, session execution, strike-out, undo | High |
+| 3 | Recording Modes | Grid-snapped vs freehand recording | High |
+| 4 | Dictionary Mode | Adding and managing custom glyphs | High |
+| 5 | Recognition Pipeline | RDP, resampling, DTW, rotation invariance | Medium |
+| 6 | Built-in Glyphs Reference | 71 glyphs across categories (shell, window management, apps, special) | Medium |
+| 7 | Configuration Reference | All config options, input filtering | Medium |
+| 8 | Integration | mmsg/ghostty integration, keybinds, carousel bar | Medium |
 
-### Implementation
-- Split README.md into focused topic files under `docs/SDG-GLYPHS/`
-- Follow SDG-DOCS naming convention (`01-*.md`, `02-*.md`, etc.)
+### Existing Content
+| File | Notes |
+|------|-------|
+| `README.md` | 400 lines — covers topics #1-7. References mangoWC (needs fix) |
+| `README-updated.md` | 230 lines — covers topics #1-7 more concisely. References mangoWM, 71 glyphs, 15° rotation |
 
 ## Tips System (`tips/`)
 **Deploy location**: `~/.local/tips/SDG-GLYPHS/`
 
 ### Planned Tips
-| # | Tip | Description | Priority |
-|---|-----|-------------|----------|
-| 1 | Launch glyphs | Press SUPER+G to open the drawing surface | High |
-| 2 | Switch mode | Draw the mode glyph to switch between TYPE, EXEC, TERM | High |
-| 3 | Session execution | Draw multiple glyphs then circle to execute as one command | High |
-| 4 | Browse dictionary | `sdgglyphs --dictionary` to see all glyphs | Medium |
-| 5 | Record new glyph | `sdgglyphs --record` to train a custom glyph | Medium |
-| 6 | Undo gesture | Ctrl+Z, Backspace, or strike-through to undo | Medium |
-| 7 | OCR bracket mode | Draw [ write freehand ] to capture handwriting via OCR | Low |
+| # | Tip | Priority |
+|---|-----|----------|
+| 1 | Draw a glyph to launch apps or type text | High |
+| 2 | Switch between TYPE/EXEC/TERM modes | High |
+| 3 | Record custom glyphs in record mode | High |
+| 4 | Use dictionary mode to manage your glyph library | Medium |
+| 5 | Strike through a glyph to delete or undo | Medium |
+| 6 | Carousel bar shows available glyphs | Medium |
+| 7 | Use bracket mode for paired characters | Low |
 
-### Implementation
-- Create `tips/SDG-GLYPHS/tips.list` with the above tips
-- Register in `install.sh` for deployment to `~/.local/tips/`
+## Implementation Notes
+- Merge `README-updated.md` content (mangoWM, 71 glyphs, 15° rotation) into `README.md`, preserving the original's deeper detail (project structure, architecture flow, glyph data format)
+- Delete `README-updated.md` after merge
+- Split the comprehensive README into focused `nn-topic-name.md` files per topic above
+- Tips in `tips/SDG-GLYPHS/tips.list`

@@ -1,4 +1,4 @@
-# glyphs — pen-based input for mangoWC
+# glyphs — pen-based input for mangoWM
 
 Draw rune-shaped glyphs with a pen/stylus to type commands or execute shell
 actions.  No keyboard needed — just draw and underline.
@@ -25,8 +25,7 @@ Also supports handwriting OCR for ad-hoc text input via Tesseract.
 
 ## Modes
 
-These keybindings are configured in your Wayland compositor (mangoWC) config,
-not inside the app itself:
+These keybindings are configured in your mangoWM binds.conf:
 
 | Keybinding          | Mode         | Command                          |
 |---------------------|--------------|----------------------------------|
@@ -219,7 +218,7 @@ Key details:
   centroid at the origin.
 - **Y-flip** — screen coordinates have Y increasing downward; templates are
   stored with Y increasing upward (mathematical convention).
-- **Rotation invariance** — 12 equispaced rotations (every 30°) are tried.
+- **Rotation invariance** — 12 equispaced rotations at 15° steps (0°, 15°, 30°, ..., 165°).
 - **Cyclic shift invariance** — for each rotation, the starting point is shifted
   through all 32 positions.
 - **Threshold** — distance ≤ 0.12 is considered a match (lower = better).
@@ -348,7 +347,7 @@ GlyphApp  (app.py)
 
 ## Built-in glyphs
 
-The project ships with 60+ predefined glyphs covering shell commands, window
+The project ships with 71 predefined glyphs covering shell commands, window
 management, app launchers, and mode switches.
 
 ### Shell commands
@@ -358,7 +357,7 @@ management, app launchers, and mode switches.
 `du`, `which`, `history`, `alias`, `export`, `ssh`, `ping`, `killall`, `wait`,
 `la` (`ls -la`), `rf` (`rm -rf`), `h` (suffix/alias)
 
-### Window management (mangoWC)
+### Window management (mangoWM)
 
 | Output string                          | Action                     |
 |----------------------------------------|----------------------------|
