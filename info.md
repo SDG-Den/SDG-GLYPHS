@@ -1,7 +1,7 @@
 Package Name: sdg-glyphs
 Descriptive Name: SDG Pen/Rune Input System
-Source: https://git.sdgcloud.nl/SDGDen/SDG-GLYPHS
-Maintainer: SDGDen <sdgden@sdgcloud.nl>
+Source: https://github.com/SDG-Den/SDG-GLYPHS
+Maintainer: SDGDen
 Version:0.2
 
 Dependencies: 
