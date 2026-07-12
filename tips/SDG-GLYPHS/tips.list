@@ -1,7 +1,7 @@
-Draw a glyph to launch apps or type text — just draw on the overlay and watch it recognise
-Switch between TYPE/EXEC/TERM modes by drawing the exec or term glyph as your first stroke
-Record custom glyphs in record mode by drawing the same shape in each grid cell
-Use dictionary mode to browse all 71 glyphs with animated stroke previews
-Strike through a recognised glyph label to remove it from the session
-The carousel bar at the bottom shows all available glyphs with live animations
-Use bracket mode (draw [, write text, draw ]) for handwriting OCR via Tesseract
+[SDG-GLYPHS]: Draw a glyph to launch apps or type text — just draw on the overlay and watch it recognise
+[SDG-GLYPHS]: Switch between TYPE/EXEC/TERM modes by drawing the exec or term glyph as your first stroke
+[SDG-GLYPHS]: Record custom glyphs in record mode by drawing the same shape in each grid cell
+[SDG-GLYPHS]: Use dictionary mode to browse all 71 glyphs with animated stroke previews
+[SDG-GLYPHS]: Strike through a recognised glyph label to remove it from the session
+[SDG-GLYPHS]: The carousel bar at the bottom shows all available glyphs with live animations
+[SDG-GLYPHS]: Use bracket mode (draw [, write text, draw ]) for handwriting OCR via Tesseract
