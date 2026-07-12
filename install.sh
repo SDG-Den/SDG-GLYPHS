@@ -1,10 +1,10 @@
 #!/bin/bash
 
 ### dependencies
-unipkg install any python3-gobject
-unipkg install any python3-cairo
+unipkg install any python-gobject
+unipkg install any python-cairo
 unipkg install any wtype
-unipkg install any tesseract-ocr
+unipkg install any tesseract
 unipkg install any tesseract-data-eng
 
 WORKDIR="$HOME/.cache/SDG-PKG/sdg-glyphs"
