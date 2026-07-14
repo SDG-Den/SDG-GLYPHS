@@ -1,38 +1,12 @@
 # Quick Start Guide
 
-## Dependencies
-
-Install required packages:
-
-```bash
-unipkg install any python3-gobject
-unipkg install any python3-cairo
-unipkg install any wtype
-```
-
-Optional — handwriting OCR in bracket mode:
-
-```bash
-unipkg install any tesseract-ocr
-unipkg install any tesseract-data-eng
-```
-
 ## Installation
 
 ```bash
 sdgpkg install sdg-glyphs
 ```
 
-Or clone the repo and run `install.sh`:
-
-```bash
-git clone https://github.com/SDG-Den/SDG-GLYPHS
-cd SDG-GLYPHS
-./install.sh
-```
-
-This copies files to `~/.local/SDG-GLYPHS/`, docs to `~/.local/docs/SDG-GLYPHS/`,
-tips to `~/.local/tips/SDG-GLYPHS/`, and creates the `/usr/bin/sdgglyphs` symlink.
+This copies files to `~/.local/SDG-GLYPHS/`, docs to `~/.local/docs/SDG-GLYPHS/`, tips to `~/.local/tips/SDG-GLYPHS/`, and creates the `/usr/bin/sdgglyphs` symlink.
 
 ## Your first glyph
 
@@ -41,8 +15,18 @@ tips to `~/.local/tips/SDG-GLYPHS/`, and creates the `/usr/bin/sdgglyphs` symlin
 3. Draw a glyph stroke with your pen/stylus — for example, draw an **`ls`** glyph
    (the shape of the letters L and S).
 4. A green label appears with the recognised glyph name.
-5. Draw a full-width horizontal line near the bottom of the screen to execute.
+5. Draw a circle to execute the glyph (or draw a horizontal line near the bottom).
 6. The glyph's output (`ls`) is typed into your focused window.
+
+## Browsing the dictionary
+
+Before recording your own glyphs, browse the built-in library:
+
+```bash
+sdgglyphs --dictionary
+```
+
+Or launch it from the desktop entry if one was installed. This shows all available glyphs with animated stroke previews.
 
 ## CLI usage
 

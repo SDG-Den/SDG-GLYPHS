@@ -21,19 +21,17 @@ The dialog notes three special output strings:
 
 `sdgglyphs --record`
 
-The recording grid shows 7 labelled anchor points (A–G) connected by
-axis-aligned and diagonal edges, plus 17 intermediate points.  When you draw,
-the stroke is **snapped** to the nearest grid nodes and routed through the
-graph via breadth-first search.  This produces clean, repeatable glyph
-definitions.
+The recording grid shows connection points for drawing precise, repeatable glyph
+definitions.  When you draw, the stroke is snapped to the nearest grid points to
+produce clean, structured shapes.
 
-Use this mode for precise, structured glyphs.
+Use this mode for precise glyphs.
 
 ## Freehand recording
 
 `sdgglyphs --record-freehand`
 
-Same grid layout, but strokes are kept as-is without snapping.  No anchor-point
-graph is shown.
+Same grid layout, but strokes are kept as-is without snapping.  No connection
+points are shown.
 
 Use this mode for organic shapes (e.g. handwritten letters, symbols).

@@ -1,4 +1,4 @@
-# Normal Mode
+# Main Interface
 
 The default mode when running `sdgglyphs` (or pressing **SUPER+G**).  A
 fullscreen transparent overlay appears — draw glyphs with your pen and each
@@ -28,9 +28,8 @@ as the very first stroke of a session:
 Everything you draw forms a *session* — a space-separated concatenation of
 every recognised glyph's output string, in the order drawn.
 
-To fire the session, draw a **horizontal line** across the full screen width
-near the bottom of the writing area.  A large **circle** gesture also triggers
-execution.  The session is then:
+To fire the session, draw a circle of any size. A horizontal line near the
+bottom of the screen also triggers execution.  The session is then:
 
 - **typed** into the focused window (TYPE mode),
 - **executed** as a shell command (EXEC mode), or
@@ -52,8 +51,8 @@ Three ways to undo:
 
 ## Carousel bar
 
-A scrollable, animated preview bar at the bottom of the screen shows all known
-glyphs.  Each glyph's stroke path is repeatedly drawn in blue with a progress
-animation.  Enabled by default; can be toggled in `config.json`.
+An auto-scrolling animated preview bar at the bottom of the screen shows all
+known glyphs.  Each glyph's stroke path is repeatedly drawn in blue with a
+progress animation.  Enabled by default; can be toggled in `config.json`.
 
 See [Configuration](06-configuration.md) for carousel settings.

@@ -2,7 +2,7 @@
 
 Gesture-based glyph input system for Wayland compositors. Draw symbols on a transparent overlay to type text or execute commands.
 
-- **71 built-in glyphs** — shell commands, window management, app launchers, mode switchers
+- **Built-in glyphs** — shell commands, window management, app launchers, mode switchers
 - **3 output modes** — TYPE (wtype), EXEC (shell), TERM (ghostty)
 - **Session execution** — draw multiple glyphs, circle to execute as one command
 - **Recording mode** — train custom glyphs (grid-snapped or freehand)
