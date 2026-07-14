@@ -55,3 +55,10 @@ known glyphs.  Each glyph's stroke path is repeatedly drawn in blue with a
 progress animation.  Enabled by default; can be toggled in `config.json`.
 
 See [Configuration](06-configuration.md) for carousel settings.
+
+## Tips for Better Recognition
+
+- Draw glyphs slowly and deliberately — quick scribbles are harder to match
+- Use a pen or stylus for the most consistent results
+- If a glyph is misrecognised, try drawing it larger and more spaced out
+- The first stroke of a session determines the mode, so make sure it is intentional
