@@ -35,3 +35,15 @@ Same grid layout, but strokes are kept as-is without snapping.  No connection
 points are shown.
 
 Use this mode for organic shapes (e.g. handwritten letters, symbols).
+
+## Managing custom glyphs
+
+Recorded glyphs are stored as individual JSON files in
+`~/.config/SDG-GLYPHS/glyphs-data/`.  Each file contains the glyph name, output
+string, and recorded stroke templates.
+
+- **Add** — use `--record` or `--record-freehand` to record new glyphs
+- **Remove** — delete the `<name>.json` file from the glyphs-data directory
+- **Share** — copy a `.json` file to another machine's glyphs-data directory;
+  the glyph will appear in the dictionary and be available for recognition
+  immediately

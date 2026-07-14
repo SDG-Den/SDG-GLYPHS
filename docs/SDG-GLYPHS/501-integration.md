@@ -26,8 +26,8 @@ TERM mode launches commands in the terminal emulator configured in
 
 | Dependency        | Purpose                              |
 |-------------------|--------------------------------------|
-| `python3-gobject` | GTK3 bindings (PyGObject)            |
-| `python3-cairo`   | Cairo 2D vector graphics             |
+| `python-gobject`  | GTK3 bindings (PyGObject)            |
+| `python-cairo`    | Cairo 2D vector graphics             |
 | `wtype`           | Wayland keystroke injection          |
-| `tesseract-ocr`   | Handwriting OCR (bracket mode, optional) |
+| `tesseract`       | Handwriting OCR (bracket mode, optional) |
 | `tesseract-data-eng` | English OCR data (optional)      |

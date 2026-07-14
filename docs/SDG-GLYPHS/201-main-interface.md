@@ -28,8 +28,7 @@ as the very first stroke of a session:
 Everything you draw forms a *session* — a space-separated concatenation of
 every recognised glyph's output string, in the order drawn.
 
-To fire the session, draw a circle of any size. A horizontal line near the
-bottom of the screen also triggers execution.  The session is then:
+To fire the session, draw a circle of any size.  The session is then:
 
 - **typed** into the focused window (TYPE mode),
 - **executed** as a shell command (EXEC mode), or

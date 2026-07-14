@@ -7,7 +7,6 @@ Gesture-based glyph input system for Wayland compositors. Draw symbols on a tran
 - **Session execution** — draw multiple glyphs, circle to execute as one command
 - **Recording mode** — train custom glyphs (grid-snapped or freehand)
 - **Dictionary browser** — view all glyphs as animated stroke cards
-- **OCR bracket mode** — draw `[` write freehand `]` for handwriting recognition via Tesseract
 - **Real-time matching** — RDP simplification, 32-point resample, rotation-invariant DTW
 
 ## Quick start
@@ -21,7 +20,7 @@ sdgglyphs --dictionary    # Browse glyph library
 
 ## Dependencies
 
-`python3-gobject`, `python3-cairo`, `wtype` — optional: `tesseract-ocr`
+`python-gobject`, `python-cairo`, `wtype` — optional: `tesseract`
 
 ## Documentation
 
