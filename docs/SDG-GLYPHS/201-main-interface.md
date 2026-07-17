@@ -5,6 +5,10 @@ fullscreen transparent overlay appears — draw glyphs with your pen and each
 completed stroke is matched against the dictionary.  Recognised glyphs show
 their name in a green label; unrecognised strokes show a red `?`.
 
+**Note:** Only pen/stylus and touchscreen input is accepted — mice and trackpads
+are automatically rejected.  You will need a drawing tablet or touchscreen to
+use the overlay.
+
 ## Mode system
 
 The overlay has three output modes, indicated in the top-left corner:

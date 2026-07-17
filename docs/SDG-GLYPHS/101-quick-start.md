@@ -12,8 +12,7 @@ This copies files to `~/.local/SDG-GLYPHS/`, docs to `~/.local/docs/SDG-GLYPHS/`
 
 1. Press **SUPER+G** (or run `sdgglyphs` in a terminal).
 2. A transparent fullscreen overlay appears.
-3. Draw a glyph stroke with your pen/stylus — for example, draw an **`ls`** glyph
-   (the shape of the letters L and S).
+3. Draw a glyph stroke with your pen/stylus — for example, draw an **`ls`** glyph.
 4. A green label appears with the recognised glyph name.
 5. Draw a circle to execute the glyph.
 6. The glyph's output (`ls`) is typed into your focused window.

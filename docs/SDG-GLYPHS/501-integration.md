@@ -29,5 +29,4 @@ TERM mode launches commands in the terminal emulator configured in
 | `python-gobject`  | GTK3 bindings (PyGObject)            |
 | `python-cairo`    | Cairo 2D vector graphics             |
 | `wtype`           | Wayland keystroke injection          |
-| `tesseract`       | Handwriting OCR (bracket mode, optional) |
-| `tesseract-data-eng` | English OCR data (optional)      |
+

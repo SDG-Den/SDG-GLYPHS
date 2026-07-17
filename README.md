@@ -7,7 +7,7 @@ Gesture-based glyph input system for Wayland compositors. Draw symbols on a tran
 - **Session execution** — draw multiple glyphs, circle to execute as one command
 - **Recording mode** — train custom glyphs (grid-snapped or freehand)
 - **Dictionary browser** — view all glyphs as animated stroke cards
-- **Real-time matching** — RDP simplification, 32-point resample, rotation-invariant DTW
+- **Real-time matching** — RDP simplification, 32-point resample, rotation- and shift-invariant pointwise distance
 
 ## Quick start
 
