@@ -2,7 +2,7 @@ Package Name: sdg-glyphs
 Descriptive Name: SDG Pen/Rune Input System
 Source: https://github.com/SDG-Den/SDG-GLYPHS
 Maintainer: SDGDen
-Version:0.2.2
+Version:0.3
 
 Dependencies: 
 python-gobject, python-cairo, wtype, python3 (>=3.10)

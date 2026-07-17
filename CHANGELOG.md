@@ -1,3 +1,9 @@
+#  sdg-glyphs update 0.3
+    
+## changelog 0.2.2 > 0.3
+
+documentation brought up to date.
+
 #  sdg-glyphs update 0.2.2
     
 ## changelog 0.2.1 > 0.2.2
