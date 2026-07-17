@@ -34,9 +34,9 @@ File: `~/.config/SDG-GLYPHS/config.json`
 | `appearance.exec_prefix`       | `""`                   | Prefix for EXEC mode (e.g. `mmsg dispatch spawn_shell,`) |
 | `appearance.term_exec`         | `["ghostty", "-e"]`    | Terminal emulator command (TERM mode)            |
 
-If the file does not exist, built-in defaults are used.  The first run will
-**not** create the file automatically — create it manually if you need
-non-default settings.
+If the file does not exist, built-in defaults are used.  A default config
+is installed to this path — edit it to customise behaviour.  If you delete
+the file the built-in defaults will apply on the next run.
 
 ## Input filtering
 

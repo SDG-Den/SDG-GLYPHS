@@ -3,7 +3,7 @@
 ```
 Ink stroke → RDP simplification → 32-point uniform resample →
 scale to unit square → centre at origin → flip Y →
-12 rotations × 32 cyclic shifts → DTW-style pointwise distance →
+12 rotations × 32 cyclic shifts → rotation- and shift-invariant pointwise distance →
 minimum across all templates → threshold check (≤ 0.12) → glyph match or `?`.
 ```
 
@@ -32,11 +32,11 @@ glyphs are recognised regardless of orientation.
 ### Cyclic shift invariance
 For each rotation, the starting point is shifted through all 32 positions,
 covering every possible starting point for the stroke.
+### Distance matching
 
-### DTW matching
-Dynamic Time Warping pointwise distance is computed across all template
-variants.  The minimum distance across all rotations, shifts, and templates is
-used.
+Rotation- and shift-invariant pointwise distance is computed across all
+template variants.  The minimum distance across all rotations, shifts, and
+templates is used.
 
 ### Threshold
 Distance ≤ 0.12 is considered a match (lower = better).  Above this, the

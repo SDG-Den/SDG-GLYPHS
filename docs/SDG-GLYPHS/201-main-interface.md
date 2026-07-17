@@ -34,6 +34,9 @@ To fire the session, draw a circle of any size.  The session is then:
 - **executed** as a shell command (EXEC mode), or
 - **launched** in a terminal emulator (TERM mode).
 
+If a glyph with the output string `__complete_enter__` is drawn, a trailing
+Enter keypress is sent after the session output.
+
 ## Strike-out (delete a glyph)
 
 Draw a short horizontal scratch **over** a recognised glyph's label to remove
@@ -54,7 +57,7 @@ An auto-scrolling animated preview bar at the bottom of the screen shows all
 known glyphs.  Each glyph's stroke path is repeatedly drawn in blue with a
 progress animation.  Enabled by default; can be toggled in `config.json`.
 
-See [Configuration](06-configuration.md) for carousel settings.
+See [Configuration](301-configuration.md) for carousel settings.
 
 ## Tips for Better Recognition
 
